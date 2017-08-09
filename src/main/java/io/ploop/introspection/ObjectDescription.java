@@ -44,6 +44,37 @@ public class ObjectDescription<T> {
 		return objectType;
 	}
 
+	/** @return The number of properties the object has. */
+	public int getPropertyCount() {
+		return propertiesByName.size();
+	}
+
+	/**
+	 * Indicates whether the object has a certain named property.
+	 * @param name The name of the property.
+	 * @return <code>true</code> if the object has the indicated property.
+	 */
+	public boolean hasProperty(@Nonnull final String name) {
+		return propertiesByName.containsKey(requireNonNull(name));
+	}
+
+	/**
+	 * Retrieves a property by name.
+	 * @param name The name of the property to retrieve.
+	 * @return The named property, or <code>null</code> if there is no property with the given name.
+	 */
+	public Property<T, ?> getProperty(@Nonnull final String name) {
+		return propertiesByName.get(requireNonNull(name));
+	}
+
+	/**
+	 * Returns the available properties. No particular order is guaranteed.
+	 * @return The properties of the object.
+	 */
+	public Collection<Property<T, ?>> getProperties() {
+		return propertiesByName.values();
+	}
+
 	/**
 	 * Creates a new description of the given object type.
 	 * @param objectType The type of object to be described.
