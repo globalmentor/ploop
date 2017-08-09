@@ -26,13 +26,13 @@ import javax.annotation.Nonnull;
  * A description of an object that allows access to a list of properties, allows accessing those property values, and serves as a factory for creating new
  * instances of the described object type.
  * <p>
- * The <dfn>properties</dfn> of an object description are abstract, named attributes that allow setting and/or retrieving values. A property is accessed via a
+ * The <dfn>properties</dfn> of an introspection are abstract, named attributes that allow setting and/or retrieving values. A property is accessed via a
  * {@link PropertyAccessor}, and may map to a class field (including private variables) or a getter and/or setting method combination.
  * </p>
  * @param <T> The type of object being described.
  * @author Garret Wilson
  */
-public class ObjectDescription<T> {
+public class Introspection<T> {
 
 	/** The immutable map of properties, mapped to property name. */
 	private Map<String, Property<T, ?>> propertiesByName;
@@ -76,11 +76,11 @@ public class ObjectDescription<T> {
 	}
 
 	/**
-	 * Creates a new description of the given object type.
+	 * Creates a new introspection of the given object type.
 	 * @param objectType The type of object to be described.
-	 * @return A description of the indicated object type.
+	 * @return An introspection of the indicated object type.
 	 */
-	private ObjectDescription(@Nonnull final TypeInfo<T> objectType, @Nonnull final Iterable<Property<T, ?>> properties) {
+	private Introspection(@Nonnull final TypeInfo<T> objectType, @Nonnull final Iterable<Property<T, ?>> properties) {
 		this.objectType = requireNonNull(objectType);
 		//build a map of properties and store an immutable version of it
 		final Map<String, Property<T, ?>> propertiesByName = new HashMap<>();
@@ -91,15 +91,15 @@ public class ObjectDescription<T> {
 	}
 
 	/**
-	 * Returns a description of the given object type.
+	 * Returns an introspection of the given object type.
 	 * @param <P> The type of object being described.
 	 * @param objectClass The type of object to be described.
-	 * @return A description of the indicated object type.
+	 * @return An introspection of the indicated object type.
 	 */
-	public static <P> ObjectDescription<P> of(@Nonnull final Class<P> objectClass) {
-		//TODO cache descriptions 
+	public static <P> Introspection<P> of(@Nonnull final Class<P> objectClass) {
+		//TODO cache introspections 
 		final TypeInfo<P> objectType = TypeInfo.forClass(objectClass);
-		return new ObjectDescription<>(objectType, Introspector.INSTANCE.discoverProperties(objectType).values());
+		return new Introspection<>(objectType, Introspector.INSTANCE.discoverProperties(objectType).values());
 	}
 
 }

@@ -23,29 +23,29 @@ import static org.hamcrest.Matchers.*;
 import org.junit.*;
 
 /**
- * Tests retrieving and using an object description.
+ * Tests retrieving and using an introspection for a type.
  * 
  * @author Garret Wilson
- * @see ObjectDescription
+ * @see Introspection
  */
-public class ObjectDescriptionTest {
+public class IntrospectionTest {
 
-	/** Tests retrieving a description of {@link FooBarBean}. */
+	/** Tests retrieving an introspection of {@link FooBarBean}. */
 	@Test
-	public void testFooBarBeanDescription() {
-		final ObjectDescription<FooBarBean> fooBarBeanDescription = ObjectDescription.of(FooBarBean.class);
-		assertThat(fooBarBeanDescription.getPropertyCount(), is(2));
+	public void testFooBarBeanIntrospection() {
+		final Introspection<FooBarBean> fooBarBeanIntrospection = Introspection.of(FooBarBean.class);
+		assertThat(fooBarBeanIntrospection.getPropertyCount(), is(2));
 
 		//foo
-		assertThat(fooBarBeanDescription.hasProperty("foo"), is(true));
-		final Property<FooBarBean, ?> fooProperty = fooBarBeanDescription.getProperty("foo");
+		assertThat(fooBarBeanIntrospection.hasProperty("foo"), is(true));
+		final Property<FooBarBean, ?> fooProperty = fooBarBeanIntrospection.getProperty("foo");
 		assertThat(fooProperty.getName(), is("foo"));
 		assertThat(fooProperty.isReadable(), is(true));
 		assertThat(fooProperty.isWritable(), is(false)); //TODO implement
 
 		//bar
-		assertThat(fooBarBeanDescription.hasProperty("bar"), is(true));
-		final Property<FooBarBean, ?> barProperty = fooBarBeanDescription.getProperty("bar");
+		assertThat(fooBarBeanIntrospection.hasProperty("bar"), is(true));
+		final Property<FooBarBean, ?> barProperty = fooBarBeanIntrospection.getProperty("bar");
 		assertThat(barProperty.getName(), is("bar"));
 		assertThat(barProperty.isReadable(), is(true));
 		assertThat(barProperty.isWritable(), is(false)); //TODO implement
@@ -58,9 +58,9 @@ public class ObjectDescriptionTest {
 		fooBarbean.setFoo("test");
 		fooBarbean.setBar(123);
 
-		final ObjectDescription<FooBarBean> fooBarBeanDescription = ObjectDescription.of(FooBarBean.class);
-		assertThat(fooBarBeanDescription.getProperty("foo").getValue(fooBarbean), is("test"));
-		//TODO fix autoboxing/conversion assertThat(fooBarBeanDescription.getProperty("bar").getValue(fooBarbean), is(123));
+		final Introspection<FooBarBean> fooBarBeanIntrospection = Introspection.of(FooBarBean.class);
+		assertThat(fooBarBeanIntrospection.getProperty("foo").getValue(fooBarbean), is("test"));
+		//TODO fix autoboxing/conversion assertThat(fooBarBeanIntrospection.getProperty("bar").getValue(fooBarbean), is(123));
 	}
 
 }
