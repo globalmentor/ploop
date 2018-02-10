@@ -1,6 +1,6 @@
 # Ploop Introspection
 
-Object discovery and access for the _Programming Library for Object-Oriented Persistence_ ([**Ploop**](https://ploop.io/)). Includes helper classes for describing objects; facilitating object reflection, object creation, and property access.
+Object discovery and access for Ploop. Includes helper classes for describing objects; facilitating object reflection, object creation, and property access.
 
 ## Download
 
