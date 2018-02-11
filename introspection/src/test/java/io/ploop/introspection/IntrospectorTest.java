@@ -33,22 +33,22 @@ import org.junit.*;
  */
 public class IntrospectorTest {
 
-	/** Tests discovering the properties of {@link FooBarBean}. */
+	/** Tests discovering the properties of {@link SimpleFooBarBean}. */
 	@Test
 	public void testFooBarBeanProperties() {
-		final Map<String, Property<FooBarBean, ?>> properties = Introspector.INSTANCE.discoverProperties(TypeInfo.forClass(FooBarBean.class));
+		final Map<String, Property<SimpleFooBarBean, ?>> properties = Introspector.INSTANCE.discoverProperties(TypeInfo.forClass(SimpleFooBarBean.class));
 		assertThat(properties.size(), is(2));
 
 		//foo
 		assertThat(properties, hasKey("foo"));
-		final Property<FooBarBean, ?> fooProperty = properties.get("foo");
+		final Property<SimpleFooBarBean, ?> fooProperty = properties.get("foo");
 		assertThat(fooProperty.getName(), is("foo"));
 		assertThat(fooProperty.isReadable(), is(true));
 		assertThat(fooProperty.isWritable(), is(false)); //TODO implement
 
 		//bar
 		assertThat(properties, hasKey("bar"));
-		final Property<FooBarBean, ?> barProperty = properties.get("bar");
+		final Property<SimpleFooBarBean, ?> barProperty = properties.get("bar");
 		assertThat(barProperty.getName(), is("bar"));
 		assertThat(barProperty.isReadable(), is(true));
 		assertThat(barProperty.isWritable(), is(false)); //TODO implement

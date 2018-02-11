@@ -30,35 +30,35 @@ import org.junit.*;
  */
 public class IntrospectionTest {
 
-	/** Tests retrieving an introspection of {@link FooBarBean}. */
+	/** Tests retrieving an introspection of {@link SimpleFooBarBean}. */
 	@Test
 	public void testFooBarBeanIntrospection() {
-		final Introspection<FooBarBean> fooBarBeanIntrospection = Introspection.of(FooBarBean.class);
+		final Introspection<SimpleFooBarBean> fooBarBeanIntrospection = Introspection.of(SimpleFooBarBean.class);
 		assertThat(fooBarBeanIntrospection.getPropertyCount(), is(2));
 
 		//foo
 		assertThat(fooBarBeanIntrospection.hasProperty("foo"), is(true));
-		final Property<FooBarBean, ?> fooProperty = fooBarBeanIntrospection.getProperty("foo");
+		final Property<SimpleFooBarBean, ?> fooProperty = fooBarBeanIntrospection.getProperty("foo");
 		assertThat(fooProperty.getName(), is("foo"));
 		assertThat(fooProperty.isReadable(), is(true));
 		assertThat(fooProperty.isWritable(), is(false)); //TODO implement
 
 		//bar
 		assertThat(fooBarBeanIntrospection.hasProperty("bar"), is(true));
-		final Property<FooBarBean, ?> barProperty = fooBarBeanIntrospection.getProperty("bar");
+		final Property<SimpleFooBarBean, ?> barProperty = fooBarBeanIntrospection.getProperty("bar");
 		assertThat(barProperty.getName(), is("bar"));
 		assertThat(barProperty.isReadable(), is(true));
 		assertThat(barProperty.isWritable(), is(false)); //TODO implement
 	}
 
-	/** Tests getting properties from of {@link FooBarBean}. */
+	/** Tests getting properties from of {@link SimpleFooBarBean}. */
 	@Test
 	public void testFooBarBeanGetProperty() throws ReflectiveOperationException {
-		final FooBarBean fooBarbean = new FooBarBean();
+		final SimpleFooBarBean fooBarbean = new SimpleFooBarBean();
 		fooBarbean.setFoo("test");
 		fooBarbean.setBar(123);
 
-		final Introspection<FooBarBean> fooBarBeanIntrospection = Introspection.of(FooBarBean.class);
+		final Introspection<SimpleFooBarBean> fooBarBeanIntrospection = Introspection.of(SimpleFooBarBean.class);
 		assertThat(fooBarBeanIntrospection.getProperty("foo").getValue(fooBarbean), is("test"));
 		//TODO fix autoboxing/conversion assertThat(fooBarBeanIntrospection.getProperty("bar").getValue(fooBarbean), is(123));
 	}
