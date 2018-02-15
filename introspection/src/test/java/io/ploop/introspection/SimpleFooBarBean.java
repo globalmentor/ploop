@@ -23,14 +23,14 @@ import javax.annotation.*;
  * 
  * @author Garret Wilson
  */
-public class FooBarBean {
+public class SimpleFooBarBean {
 
 	private String foo;
 
 	private int bar;
 
 	/** No-args constructor. */
-	public FooBarBean() {
+	public SimpleFooBarBean() {
 	}
 
 	/** @return The foo. */
