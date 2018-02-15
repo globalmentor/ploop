@@ -20,6 +20,8 @@ import static java.util.Objects.*;
 
 import javax.annotation.*;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * Base implementation of object property value information.
  * @param <V> The type of value stored in the property.

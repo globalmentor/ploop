@@ -20,6 +20,8 @@ import static java.util.Objects.*;
 
 import javax.annotation.*;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * Abstract base class for implementing a property.
  * @param <T> The type of object this property is for.

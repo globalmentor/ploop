@@ -23,6 +23,8 @@ import javax.annotation.*;
 import com.fasterxml.classmate.*;
 import com.fasterxml.classmate.members.*;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * A factory that discovers properties and other information from an object class.
  * @author Garret Wilson

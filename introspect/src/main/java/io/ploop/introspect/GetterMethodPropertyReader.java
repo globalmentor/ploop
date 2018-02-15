@@ -23,6 +23,8 @@ import javax.annotation.*;
 
 import com.fasterxml.classmate.members.ResolvedMethod;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * A strategy for retrieving the value of an object property. The implementation may access a value directly in a field or via an accessor method.
  * @param <T> The type of object this property is for.

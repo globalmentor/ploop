@@ -22,6 +22,8 @@ import java.util.*;
 
 import javax.annotation.Nonnull;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * A description of an object that allows access to a list of properties, allows accessing those property values, and serves as a factory for creating new
  * instances of the described object type.

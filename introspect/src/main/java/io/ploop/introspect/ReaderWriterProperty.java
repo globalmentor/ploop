@@ -20,6 +20,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.annotation.*;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * Encapsulates accessors for reading and/or writing a value of single object property.
  * @param <T> The type of object this property is for.

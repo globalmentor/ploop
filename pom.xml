@@ -48,6 +48,7 @@
 	</properties>
 
 	<modules>
+		<module>reflect</module>
 		<module>convert</module>
 		<module>introspect</module>
 	</modules>
@@ -68,9 +69,27 @@
 			</dependency>
 
 			<dependency>
+				<groupId>io.ploop</groupId>
+				<artifactId>ploop-convert</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.ploop</groupId>
+				<artifactId>ploop-introspect</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.ploop</groupId>
+				<artifactId>ploop-reflect</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
 				<groupId>com.fasterxml</groupId>
 				<artifactId>classmate</artifactId>
-				<version>1.3.3</version>
+				<version>1.3.4</version>
 			</dependency>
 
 			<dependency>

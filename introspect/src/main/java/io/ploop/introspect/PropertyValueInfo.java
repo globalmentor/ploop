@@ -16,6 +16,8 @@
 
 package io.ploop.introspect;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * General information about a property value.
  * @param <V> The type of value stored in the property.

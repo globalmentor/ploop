@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.ploop.introspect;
+package io.ploop.reflect;
 
 import static java.util.Objects.*;
 
