@@ -14,14 +14,50 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
+
+import javax.annotation.*;
 
 /**
- * A strategy for accessing an object property. The implementation may access a value directly in a field or via an accessor method.
- * @param <T> The type of object this property is for.
- * @param <V> The type of value stored in the property.
+ * The most basic of JavaBean implementations. A pure bean.
+ * 
  * @author Garret Wilson
  */
-public interface PropertyAccessor<T, V> extends PropertyValueInfo<V> {
+public class SimpleFooBarBean {
+
+	private String foo;
+
+	private int bar;
+
+	/** No-args constructor. */
+	public SimpleFooBarBean() {
+	}
+
+	/** @return The foo. */
+	public String getFoo() {
+		return foo;
+	}
+
+	/**
+	 * Sets foo.
+	 * @param foo The new foo.
+	 */
+	public void setFoo(@Nullable final String foo) {
+		this.foo = foo;
+	}
+
+	/** @return The bar. */
+	public int getBar() {
+		return bar;
+	}
+
+	/**
+	 * Sets bar.
+	 * 
+	 * @param bar The new bar.
+	 */
+	public void setBar(@Nullable final int bar) {
+		this.bar = bar;
+	}
 
 }

@@ -9,7 +9,7 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ploop-introspection</artifactId>
+	<artifactId>ploop-introspect</artifactId>
 
 	<name>Ploop Introspection</name>
 	<description>Object discovery and access.</description>

@@ -14,32 +14,38 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
 
 import static java.util.Objects.*;
 
 import javax.annotation.*;
 
 /**
- * Base implementation of object property value information.
+ * Abstract base class for implementing a property.
+ * @param <T> The type of object this property is for.
  * @param <V> The type of value stored in the property.
  * @author Garret Wilson
  */
-public abstract class BasePropertyValueInfo<V> implements PropertyValueInfo<V> {
+public abstract class AbstractProperty<T, V> extends BasePropertyValueInfo<V> implements Property<T, V> {
 
-	private final TypeInfo<V> valueType;
+	private final String name;
 
 	@Override
-	public TypeInfo<V> getValueType() {
-		return valueType;
+	public String getName() {
+		return name;
 	}
 
 	/**
 	 * Constructor.
-	 * @param valueType The type of value the property represents.
+	 * @param name The name of the property.
+	 * @param valueType The resolved type of value the property represents.
+	 * @throws NullPointerException if the given name is <code>null</code>.
+	 * @throws IllegalArgumentException if the given name is not a valid Java variable name.
 	 */
-	public BasePropertyValueInfo(@Nonnull final TypeInfo<V> valueType) {
-		this.valueType = requireNonNull(valueType);
+	public AbstractProperty(@Nonnull final String name, @Nonnull final TypeInfo<V> valueType) {
+		super(valueType);
+		this.name = requireNonNull(name);
+		//TODO check name validity
 	}
 
 }

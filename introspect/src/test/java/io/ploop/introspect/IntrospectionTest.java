@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
 
 import static org.junit.Assert.*;
 
 import static org.hamcrest.Matchers.*;
 
 import org.junit.*;
+
+import io.ploop.introspect.Introspection;
+import io.ploop.introspect.Property;
 
 /**
  * Tests retrieving and using an introspection for a type.

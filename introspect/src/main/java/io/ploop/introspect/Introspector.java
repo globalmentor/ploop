@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
 
 import java.util.*;
 

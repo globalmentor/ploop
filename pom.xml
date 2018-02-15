@@ -48,7 +48,7 @@
 	</properties>
 
 	<modules>
-		<module>introspection</module>
+		<module>introspect</module>
 	</modules>
 
 	<dependencyManagement>

@@ -4,7 +4,7 @@ Object discovery and access for Ploop. Includes helper classes for describing ob
 
 ## Download
 
-Ploop Introspection is available in the Maven Central Repository as [oi.ploop:ploop-introspection](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.ploop%22%20AND%20a%3A%ploop-introspection%22).
+Ploop Introspection is available in the Maven Central Repository as [oi.ploop:ploop-introspect](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.ploop%22%20AND%20a%3A%ploop-introspect%22).
 
 ## Issues
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +23,10 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 
 import org.junit.*;
+
+import io.ploop.introspect.Introspector;
+import io.ploop.introspect.Property;
+import io.ploop.introspect.TypeInfo;
 
 /**
  * Tests the descriptive abilities of the PLOOP introspector.

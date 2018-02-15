@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
+package io.ploop.introspect;
 
 /**
- * General information about a property value.
+ * A strategy for accessing an object property. The implementation may access a value directly in a field or via an accessor method.
+ * @param <T> The type of object this property is for.
  * @param <V> The type of value stored in the property.
  * @author Garret Wilson
  */
-public interface PropertyValueInfo<V> {
-
-	/** @return The type of value the property represents. */
-	public TypeInfo<V> getValueType();
+public interface PropertyAccessor<T, V> extends PropertyValueInfo<V> {
 
 }

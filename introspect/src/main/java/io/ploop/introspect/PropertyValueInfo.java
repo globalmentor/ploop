@@ -14,50 +14,16 @@
  * limitations under the License.
  */
 
-package io.ploop.introspection;
-
-import javax.annotation.*;
+package io.ploop.introspect;
 
 /**
- * The most basic of JavaBean implementations. A pure bean.
- * 
+ * General information about a property value.
+ * @param <V> The type of value stored in the property.
  * @author Garret Wilson
  */
-public class SimpleFooBarBean {
+public interface PropertyValueInfo<V> {
 
-	private String foo;
-
-	private int bar;
-
-	/** No-args constructor. */
-	public SimpleFooBarBean() {
-	}
-
-	/** @return The foo. */
-	public String getFoo() {
-		return foo;
-	}
-
-	/**
-	 * Sets foo.
-	 * @param foo The new foo.
-	 */
-	public void setFoo(@Nullable final String foo) {
-		this.foo = foo;
-	}
-
-	/** @return The bar. */
-	public int getBar() {
-		return bar;
-	}
-
-	/**
-	 * Sets bar.
-	 * 
-	 * @param bar The new bar.
-	 */
-	public void setBar(@Nullable final int bar) {
-		this.bar = bar;
-	}
+	/** @return The type of value the property represents. */
+	public TypeInfo<V> getValueType();
 
 }
