@@ -54,6 +54,7 @@ public interface Property<T, V> extends PropertyValueInfo<V> {
 	/**
 	 * Sets the value of the property for a given instance.
 	 * @param object The object the property value of which should be set, which may be <code>null</code> if the property allows null values.
+	 * @param value The value to set for the property.
 	 * @throws UnsupportedOperationException if this property is not writable.
 	 * @throws IllegalArgumentException the given value is inappropriate for the property.
 	 * @throws IllegalAccessException If the object is enforcing Java language access control some underlying method is inaccessible.

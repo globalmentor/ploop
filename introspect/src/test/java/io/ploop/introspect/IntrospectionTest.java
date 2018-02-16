@@ -63,7 +63,7 @@ public class IntrospectionTest {
 
 		final Introspection<SimpleFooBarBean> fooBarBeanIntrospection = Introspection.of(SimpleFooBarBean.class);
 		assertThat(fooBarBeanIntrospection.getProperty("foo").getValue(fooBarbean), is("test"));
-		//TODO fix autoboxing/conversion assertThat(fooBarBeanIntrospection.getProperty("bar").getValue(fooBarbean), is(123));
+		assertThat(fooBarBeanIntrospection.getProperty("bar").getValue(fooBarbean), is(123));
 	}
 
 }

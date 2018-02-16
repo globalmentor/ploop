@@ -9,18 +9,13 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ploop-introspect</artifactId>
+	<artifactId>ploop-convert</artifactId>
 
-	<name>Ploop Introspection</name>
-	<description>Object discovery and access.</description>
+	<name>Ploop Conversion</name>
+	<description>Type assignability, compatibility, and conversion library.</description>
 	<url>https://ploop.io/</url>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.fasterxml</groupId>
-			<artifactId>classmate</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
@@ -28,7 +23,7 @@
 
 		<dependency>
 			<groupId>io.ploop</groupId>
-			<artifactId>ploop-convert</artifactId>
+			<artifactId>ploop-reflect</artifactId>
 		</dependency>
 
 		<dependency>

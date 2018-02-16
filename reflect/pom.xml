@@ -9,10 +9,10 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ploop-introspect</artifactId>
+	<artifactId>ploop-reflect</artifactId>
 
-	<name>Ploop Introspection</name>
-	<description>Object discovery and access.</description>
+	<name>Ploop Reflection</name>
+	<description>Reflection type and metadata utilities.</description>
 	<url>https://ploop.io/</url>
 
 	<dependencies>
@@ -24,11 +24,6 @@
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.ploop</groupId>
-			<artifactId>ploop-convert</artifactId>
 		</dependency>
 
 		<dependency>

@@ -23,6 +23,8 @@ import javax.annotation.*;
 
 import com.fasterxml.classmate.members.ResolvedMethod;
 
+import io.ploop.reflect.TypeInfo;
+
 /**
  * A strategy for retrieving the value of an object property. The implementation may access a value directly in a field or via an accessor method.
  * @param <T> The type of object this property is for.
@@ -46,7 +48,7 @@ public class GetterMethodPropertyReader<T, V> extends BasePropertyValueInfo<V> i
 
 	@Override
 	public V getValue(T object) throws UnsupportedOperationException, IllegalAccessException, InvocationTargetException, ExceptionInInitializerError {
-		return getValueType().getErasedType().cast(getterMethod.getRawMember().invoke(object));
+		return getValueType().castReflection(getterMethod.getRawMember().invoke(object));
 	}
 
 }

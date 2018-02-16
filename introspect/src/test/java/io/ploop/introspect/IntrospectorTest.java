@@ -26,7 +26,7 @@ import org.junit.*;
 
 import io.ploop.introspect.Introspector;
 import io.ploop.introspect.Property;
-import io.ploop.introspect.TypeInfo;
+import io.ploop.reflect.TypeInfo;
 
 /**
  * Tests the descriptive abilities of the PLOOP introspector.
