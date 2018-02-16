@@ -48,7 +48,7 @@ public class GetterMethodPropertyReader<T, V> extends BasePropertyValueInfo<V> i
 
 	@Override
 	public V getValue(T object) throws UnsupportedOperationException, IllegalAccessException, InvocationTargetException, ExceptionInInitializerError {
-		return getValueType().getErasedType().cast(getterMethod.getRawMember().invoke(object));
+		return getValueType().castReflection(getterMethod.getRawMember().invoke(object));
 	}
 
 }

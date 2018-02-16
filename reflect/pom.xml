@@ -12,7 +12,7 @@
 	<artifactId>ploop-reflect</artifactId>
 
 	<name>Ploop Reflection</name>
-	<description>Type and metadata utilities.</description>
+	<description>Reflection type and metadata utilities.</description>
 	<url>https://ploop.io/</url>
 
 	<dependencies>
