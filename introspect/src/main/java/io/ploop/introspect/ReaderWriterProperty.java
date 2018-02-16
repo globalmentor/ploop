@@ -36,6 +36,7 @@ public class ReaderWriterProperty<T, V> extends AbstractProperty<T, V> {
 	 * Constructor.
 	 * @param name The name of the property.
 	 * @param valueType The resolved type of value the property represents.
+	 * @param reader The strategy for reading the property for an object.
 	 * @throws NullPointerException if the given name is <code>null</code>.
 	 * @throws IllegalArgumentException if the given name is not a valid Java variable name.
 	 * @throws IllegalArgumentException if neither a reader nor a writer is give (the property must be readable or writable).

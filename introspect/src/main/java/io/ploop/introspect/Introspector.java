@@ -47,7 +47,8 @@ public class Introspector {
 
 	/**
 	 * Discovers properties of the given object type.
-	 * @param objectType The type of object to be described.
+	 * @param <T> The type of the object of object to be described.
+	 * @param objectType Information about type of object to be described.
 	 * @return The map of discovered properties, mapped to property name.
 	 */
 	public <T> Map<String, Property<T, ?>> discoverProperties(@Nonnull final TypeInfo<T> objectType) {
