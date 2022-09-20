@@ -87,6 +87,15 @@ public class Introspector {
 		return properties;
 	}
 
+	/**
+	 * Factory for creating a property.
+	 * @param <T> The type of object this property is for.
+	 * @param <V> The type of value stored in the property.
+	 * @param propertyName The name of the property.
+	 * @param propertyType The type of the property.
+	 * @param propertyReader The strategy for retrieving the value of the property.
+	 * @return The new property instance.
+	 */
 	protected <T, V> Property<T, V> createProperty(@Nonnull final String propertyName, @Nonnull final TypeInfo<V> propertyType,
 			@Nonnull final PropertyReader<T, ?> propertyReader /*TODO add writer*/) {
 		//TODO make sure the types are compatible
