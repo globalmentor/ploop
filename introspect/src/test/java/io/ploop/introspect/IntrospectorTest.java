@@ -16,16 +16,13 @@
 
 package io.ploop.introspect;
 
-import static org.junit.Assert.*;
-
 import java.util.Map;
 
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-import org.junit.*;
+import org.junit.jupiter.api.*;
 
-import io.ploop.introspect.Introspector;
-import io.ploop.introspect.Property;
 import io.ploop.reflect.TypeInfo;
 
 /**

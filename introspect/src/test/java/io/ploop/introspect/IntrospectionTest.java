@@ -16,14 +16,10 @@
 
 package io.ploop.introspect;
 
-import static org.junit.Assert.*;
-
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-import org.junit.*;
-
-import io.ploop.introspect.Introspection;
-import io.ploop.introspect.Property;
+import org.junit.jupiter.api.*;
 
 /**
  * Tests retrieving and using an introspection for a type.

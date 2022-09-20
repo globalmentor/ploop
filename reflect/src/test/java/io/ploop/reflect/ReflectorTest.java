@@ -16,13 +16,13 @@
 
 package io.ploop.reflect;
 
-import static org.junit.Assert.*;
-
 import java.util.*;
 
-import static org.hamcrest.Matchers.*;
+import org.junit.jupiter.api.*;
 
-import org.junit.*;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Tests the reflection and type functionality of the PLOOP reflector.
@@ -119,14 +119,14 @@ public class ReflectorTest {
 	}
 
 	/** @see Reflector#castReflection(Object, Class) */
-	@Test(expected = ClassCastException.class)
+	@Test
 	public void testCastReflectionToUnrelatedTypeThrowsException() {
-		Reflector.castReflection("foo", Number.class);
+		assertThrows(ClassCastException.class, () -> Reflector.castReflection("foo", Number.class));
 	}
 
 	/** @see Reflector#castReflection(Object, Class) */
-	@Test(expected = ClassCastException.class)
+	@Test
 	public void testCastReflectionToSubtypeThrowsException() {
-		Reflector.castReflection(new Hashtable<>(), Properties.class);
+		assertThrows(ClassCastException.class, () -> Reflector.castReflection(new Hashtable<>(), Properties.class));
 	}
 }
